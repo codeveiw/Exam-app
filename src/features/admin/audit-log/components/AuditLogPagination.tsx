@@ -23,7 +23,7 @@ export function AuditLogPagination({
     const isTotalZero = total === 0;
 
     return (
-        <div className="flex items-center justify-between py-4">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 py-4">
             <div className="flex items-center gap-4">
                 <span className="text-sm font-medium text-muted-foreground whitespace-nowrap">
                     {isTotalZero ? "0 - 0" : `${start} - ${end}`} of {total}

@@ -166,7 +166,7 @@ export default function AccountSettingsPage() {
             }
           )}>
 
-            <Field className="mt-1 grid grid-cols-2 gap-2">
+            <Field className="mt-1 grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
                 <FieldLabel className="py-1">First Name</FieldLabel>
 

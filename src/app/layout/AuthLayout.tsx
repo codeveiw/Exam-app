@@ -6,8 +6,8 @@ import RegistrationStepper from "@/features/auth/components/RegistrationStepper"
 
 export default function AuthLayout() {
   return (
-    <div className="grid min-h-screen grid-cols-2">
-      <div className="flex flex-col gap-10 pt-8 bg-gradient-to-br from-blue-200 via-blue-50 to-white">
+    <div className="grid min-h-screen grid-cols-1 md:grid-cols-2">
+      <div className="hidden md:flex flex-col gap-10 pt-8 bg-gradient-to-br from-blue-200 via-blue-50 to-white">
         <div className="mx-auto">
           <Logo />
 
@@ -21,15 +21,15 @@ export default function AuthLayout() {
         </div>
       </div>
 
-<div className="flex flex-col justify-center items-center px-8">
-  <div className="w-full max-w-md">
-    <RegistrationStepper />
-  </div>
+      <div className="flex flex-col justify-center items-center px-8">
+        <div className="w-full max-w-md">
+          <RegistrationStepper />
+        </div>
 
-  <div className="w-full max-w-md">
-    <Outlet />
-  </div>
-  </div>
+        <div className="w-full max-w-md">
+          <Outlet />
+        </div>
+      </div>
     </div>
   );
 }

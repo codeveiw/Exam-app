@@ -86,8 +86,8 @@ export default function AdminExamPage() {
   };
 
   return (
-    <div className="bg-white rounded-md shadow-sm p-6 w-full max-w-[1200px] mx-auto min-h-[800px]">
-      <div className="mb-6 flex justify-between items-end">
+    <div className="bg-white rounded-md shadow-sm p-4 md:p-6 w-full max-w-[1200px] mx-auto min-h-[800px]">
+      <div className="mb-6 flex flex-col sm:flex-row justify-between items-start sm:items-end gap-4">
         <div>
           <p className="text-gray-400 text-xs font-semibold uppercase tracking-wider mb-2">Exams</p>
           <div className="flex items-center gap-4">
@@ -115,7 +115,7 @@ export default function AdminExamPage() {
             </div>
           </div>
         </div>
-        <Button className="bg-[#00d084] hover:bg-[#00ba77] text-white rounded font-medium h-9 px-4" onClick={() => navigate("/admin/exams/new")}>
+        <Button className="bg-[#00d084] hover:bg-[#00ba77] text-white rounded font-medium h-9 px-4 w-full sm:w-auto mt-2 sm:mt-0" onClick={() => navigate("/admin/exams/new")}>
           <Plus className="h-4 w-4 mr-2" />
           Create New Exam
         </Button>
@@ -149,7 +149,7 @@ export default function AdminExamPage() {
                 />
                 <Search className="absolute right-3 h-4 w-4 text-gray-300" />
               </div>
-              <div className="flex gap-4">
+              <div className="flex flex-col sm:flex-row gap-4">
                 <div className="flex-1">
                   <Select value={diplomaFilter} onValueChange={setDiplomaFilter}>
                     <SelectTrigger className="w-full border-gray-200 focus:ring-blue-500 text-gray-500">
@@ -199,7 +199,9 @@ export default function AdminExamPage() {
             <Loader2 className="animate-spin text-blue-600 w-10 h-10" />
           </div>
         ) : (
-          <ExamTable exams={exams} sort={sort} onSortChange={setSort} />
+          <div className="overflow-x-auto w-full">
+            <ExamTable exams={exams} sort={sort} onSortChange={setSort} />
+          </div>
         )}
       </div>
     </div>
