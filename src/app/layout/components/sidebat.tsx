@@ -37,7 +37,7 @@ export default function Sidebar() {
     };
 
     return (
-        <aside className="w-64 border-r border-[#e0e8f5] bg-[#f8fbff] h-screen flex flex-col justify-between py-8 px-6 fixed left-0 top-0">
+        <aside className="w-full flex-1 border-r border-[#e0e8f5] bg-[#f8fbff] h-full md:h-screen flex flex-col justify-between py-4 md:py-8 px-6 md:fixed left-0 top-0">
             <div className="flex flex-col gap-8">
                 {/* Brand/Logo Section */}
                 <div className="flex flex-col gap-2">
@@ -85,7 +85,7 @@ export default function Sidebar() {
                             <div className="flex items-center gap-3">
                                 <Avatar className="border-gray-100 rounded-md">
                                     <AvatarImage
-                                        src={user?.profilePhoto || "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&q=90"}
+                                        src={user?.profilePhoto || "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=100&q=90"}
                                         alt={fullName}
                                     />
                                     <AvatarFallback className="bg-slate-200 text-slate-700 font-semibold text-xs rounded-md">

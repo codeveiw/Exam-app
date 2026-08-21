@@ -38,7 +38,7 @@ export default function AdminSidebar() {
   };
 
   return (
-    <aside className="w-64 shrink-0 bg-[#1f2937] text-gray-300 h-screen sticky top-0 flex flex-col justify-between py-6 px-4">
+    <aside className="w-full flex-1 shrink-0 bg-[#1f2937] text-gray-300 h-full md:h-screen md:sticky top-0 flex flex-col justify-between py-4 px-4 overflow-y-auto">
       <div className="flex flex-col gap-8">
         <div className="flex flex-col gap-2 px-2">
           <img src={ElevateLogo} alt="Elevate Logo" className="w-[120px] object-contain brightness-0 invert" />
@@ -113,7 +113,7 @@ export default function AdminSidebar() {
               <div className="flex items-center gap-3">
                 <Avatar className="border border-white/10 w-9 h-9 rounded-md">
                   <AvatarImage
-                    src={user?.profilePhoto || "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&q=90"}
+                    src={user?.profilePhoto || "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=100&q=90"}
                     alt={fullName}
                   />
                   <AvatarFallback className="bg-slate-700 text-white font-semibold text-xs rounded-md">
