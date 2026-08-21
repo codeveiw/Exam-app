@@ -113,7 +113,7 @@ export default function AdminSidebar() {
               <div className="flex items-center gap-3">
                 <Avatar className="border border-white/10 w-9 h-9 rounded-md">
                   <AvatarImage
-                    src={user?.profilePhoto || "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=100&q=90"}
+                    src={user?.profilePhoto || ""}
                     alt={fullName}
                   />
                   <AvatarFallback className="bg-slate-700 text-white font-semibold text-xs rounded-md">

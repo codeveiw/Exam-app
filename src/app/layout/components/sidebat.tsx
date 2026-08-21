@@ -85,7 +85,7 @@ export default function Sidebar() {
                             <div className="flex items-center gap-3">
                                 <Avatar className="border-gray-100 rounded-md">
                                     <AvatarImage
-                                        src={user?.profilePhoto || "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=100&q=90"}
+                                        src={user?.profilePhoto || ""}
                                         alt={fullName}
                                     />
                                     <AvatarFallback className="bg-slate-200 text-slate-700 font-semibold text-xs rounded-md">
