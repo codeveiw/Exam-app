@@ -5,7 +5,7 @@ import { cn } from "@/lib/utils";
 import useForgetPasswordForm from "../forms/useForgetPasswordForm";
 import type { SubmitHandler } from "react-hook-form";
 import type { ForgetPasswordSchema } from "../forms/schemas/forgetPassword.schema";
-import {useNavigate} from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 import useForgotPassword from "../hooks/useForgotPassword";
 import { toast } from "sonner";
 import type { AxiosError } from "axios";
@@ -13,10 +13,10 @@ import type { ApiErrorResponse } from "../types/user";
 
 
 export default function ForgotPasswordPage() {
-const navigate = useNavigate();
+  const navigate = useNavigate();
   const form = useForgetPasswordForm();
   const forgotPasswordMutation = useForgotPassword();
-  const onSubmit:SubmitHandler<ForgetPasswordSchema> = (data) => {
+  const onSubmit: SubmitHandler<ForgetPasswordSchema> = (data) => {
     forgotPasswordMutation.mutate(
       {
         email: data.email,
@@ -24,23 +24,24 @@ const navigate = useNavigate();
       },
       {
         onSuccess: () => {
-          
+
           navigate("/auth/reset-send", { state: { email: data.email } });
         },
-onError: (error: AxiosError<ApiErrorResponse>) => {
-  const errors = error.response?.data?.errors;
+        onError: (err: unknown) => {
+          const error = err as AxiosError<ApiErrorResponse>;
+          const errors = error.response?.data?.errors;
 
-  if (errors?.length) {
-    errors.forEach((err) => {
-      toast.error(err.message);
-    });
-    return;
-  }
+          if (errors?.length) {
+            errors.forEach((e) => {
+              toast.error(e.message);
+            });
+            return;
+          }
 
-  toast.error(
-    error.response?.data?.message || "Something went wrong"
-  );
-}
+          toast.error(
+            error.response?.data?.message || "Something went wrong"
+          );
+        }
       }
     );
     console.log(data)
@@ -67,11 +68,11 @@ onError: (error: AxiosError<ApiErrorResponse>) => {
           <FieldError errors={[form.formState.errors.email]} />
         </Field>
         <div>
-          <Button type="submit"  className="w-full font-medium text-sm " >
-          Next<span className="ps-3 text-xl">{">"}</span>
+          <Button type="submit" className="w-full font-medium text-sm " >
+            Next<span className="ps-3 text-xl">{">"}</span>
           </Button>
         </div>
-     
+
 
       </form>
     </div>

@@ -75,7 +75,8 @@ export default function ChangePasswordPage() {
         form.reset();
       },
 
-      onError: (error: AxiosError<ApiErrorResponse>) => {
+      onError: (err: unknown) => {
+        const error = err as AxiosError<ApiErrorResponse>;
         console.error("CHANGE PASSWORD ERROR:", error);
 
         toast.error("Something went wrong", {
